@@ -33,7 +33,8 @@ class DatabasePool:
                 port=os.getenv('DB_PORT', '5432'),
                 database=os.getenv('DB_NAME', 'db_clinica'),
                 user=os.getenv('DB_USER', 'postgres'),
-                password=os.getenv('DB_PASSWORD', '')
+                password=os.getenv('DB_PASSWORD', ''),
+                sslmode=os.getenv('DB_SSLMODE', 'require')
             )
             logger.info("Pool de conexiones inicializado correctamente")
         except Exception as e:
